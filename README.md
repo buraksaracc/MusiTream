@@ -1,2 +1,2 @@
 # MusiTream
-A music, social-media application.
+A music platform and social-media application.
