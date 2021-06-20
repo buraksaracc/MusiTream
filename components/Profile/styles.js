@@ -108,8 +108,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   mediaContainer: {
-    borderWidth: 2,
-    borderColor: "black",
+    borderWidth: 1,
+    borderColor: "#383838",
     marginLeft: 40,
     marginTop: 30,
     width: 100,
@@ -133,8 +133,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   audioContent: {
-    borderWidth: 2,
-    borderColor: "black",
+    borderWidth: 1,
+    borderColor: "#CBCBCB",
     backgroundColor: "rgba(195, 183, 255, 0.42)",
     alignSelf: "center",
     justifyContent: "center",
