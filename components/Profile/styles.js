@@ -108,6 +108,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   mediaContainer: {
+    borderWidth: 2,
+    borderColor: "black",
     marginLeft: 40,
     marginTop: 30,
     width: 100,
@@ -122,14 +124,42 @@ const styles = StyleSheet.create({
     padding: 5,
   },
   contentCounter: {
-    backgroundColor:"rgba(0, 0, 0, 0.5)",
-    borderRadius:10,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    borderRadius: 10,
     position: "absolute",
-    width:50,
-    height:70,
-    alignItems:"center",
-    justifyContent:"center",
-
+    width: 50,
+    height: 70,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  audioContent: {
+    borderWidth: 2,
+    borderColor: "black",
+    backgroundColor: "rgba(195, 183, 255, 0.42)",
+    alignSelf: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 12,
+    width: 100,
+    height: 140,
+   
+  },
+  audioBorder: {
+   
+    textAlign: "center",
+    width: 100,
+    height: 180,
+    alignItems: "center",
+    alignSelf:"center",
+    marginTop: 25,
+    marginLeft: 40,
+  
+  },
+  audioInfo: {
+    textAlign:"center",
+    color: "#CBCBCB",
+    fontSize: 10,
+    fontWeight: "500",
   },
 });
 export default styles;
