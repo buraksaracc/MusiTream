@@ -108,9 +108,9 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   mediaContainer: {
-    borderWidth: 1,
+    borderWidth: 0.5,
     borderColor: "#383838",
-    marginLeft: 40,
+    marginLeft: 35,
     marginTop: 30,
     width: 100,
     height: 140,
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 12,
     width: 100,
-    height: 140,
+    height: 134,
    
   },
   audioBorder: {
@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
     height: 180,
     alignItems: "center",
     alignSelf:"center",
-    marginTop: 25,
+    marginTop: 30,
     marginLeft: 40,
   
   },
