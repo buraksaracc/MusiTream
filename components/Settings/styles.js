@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     marginTop: 60,
     marginHorizontal: 16,
   },
-  
+
   pageTitle: {
     position: "absolute",
     justifyContent: "flex-start",
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   },
   settings: {
     marginLeft: 40,
-    marginRight:15,
+    marginRight: 15,
     width: "100%",
     fontWeight: "800",
     fontSize: 14,
@@ -36,15 +36,31 @@ const styles = StyleSheet.create({
     fontSize: 16,
     justifyContent: "center",
     borderRadius: 30,
-    marginTop:15
+    marginTop: 15,
   },
-  margining:{
-    marginTop:200
+  margining: {
+    marginTop: 200,
   },
-  copyright:{
-    alignItems:"center",
-    justifyContent:"center",
-    marginTop:220
-  }
+  copyright: {
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 220,
+  },
+  about: {
+    backgroundColor: "rgba(123, 97, 255, 0.5)",
+    borderRadius: 12,
+    marginLeft: 40,
+    marginRight: 15,
+    width: 300,
+    fontWeight: "700",
+    fontSize: 14,
+    padding: 20,
+    color: "#CBCBCB",
+    textAlign: "center",
+  },
+  closeButton: {
+    color: "#CBCBCB",
+    marginLeft: 315,
+  },
 });
 export default styles;
