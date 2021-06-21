@@ -1,17 +1,15 @@
-import React from "react";
-import {
-  Text,
-  View,
-  Image,
-  ScrollView,
-  SafeAreaView,
-  TouchableOpacity,
-} from "react-native";
+import React, { useState } from "react";
+import { Text, View, Image, ScrollView, TouchableOpacity } from "react-native";
 import styles from "./styles";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
-import { render } from "react-dom";
+import Modal from "react-native-modal";
 
 export default function Profile() {
+  const [isModalVisible, setModalVisible] = useState(false);
+
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
   return (
     <ScrollView style={styles.container}>
       <ScrollView vertical={true} showsVerticalScrollIndicator={false}>
@@ -100,13 +98,37 @@ export default function Profile() {
         </View>
         <View style={styles.mediaBorder}>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            <TouchableOpacity style={styles.mediaContainer}>
+            <TouchableOpacity
+              style={styles.mediaContainer}
+              onPress={toggleModal}
+            >
               <Image
                 source={require("../../assets/random1.jpg")}
                 style={styles.image}
                 resizeMode="cover"
               ></Image>
             </TouchableOpacity>
+
+            <Modal isVisible={isModalVisible} style={{ marginTop: 50 }}>
+              <TouchableOpacity onPress={toggleModal}>
+                <Ionicons
+                  style={styles.closeButton}
+                  name="close-circle-outline"
+                  size={30}
+                ></Ionicons>
+              </TouchableOpacity>
+
+              <View style={styles.clickable}>
+                <Image
+                  source={require("../../assets/random1.jpg")}
+                  style={styles.image}
+                ></Image>
+                <Text style={styles.caption}>
+                  this is me singing my lorem song, enjoy
+                </Text>
+              </View>
+            </Modal>
+
             <TouchableOpacity style={styles.mediaContainer}>
               <Image
                 source={require("../../assets/random2.jpg")}

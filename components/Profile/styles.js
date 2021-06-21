@@ -142,24 +142,45 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     width: 100,
     height: 134,
-   
   },
   audioBorder: {
-   
     textAlign: "center",
     width: 100,
     height: 180,
     alignItems: "center",
-    alignSelf:"center",
+    alignSelf: "center",
     marginTop: 30,
     marginLeft: 40,
-  
   },
   audioInfo: {
-    textAlign:"center",
+    textAlign: "center",
     color: "#CBCBCB",
     fontSize: 10,
     fontWeight: "500",
+  },
+  caption: {
+    marginTop:5,
+    fontWeight: "500",
+    fontSize: 13,
+    padding: 20,
+    color: "#CBCBCB",
+    textAlign: "center",
+  },
+  closeButton: {
+    color: "#CBCBCB",
+    marginLeft: 320,
+  },
+ 
+  clickable: {
+    padding: 30,
+    width: 350,
+    height: 300,
+    backgroundColor: "black",
+    alignSelf: "center",
+    fontSize: 16,
+    justifyContent: "center",
+    borderRadius: 30,
+    marginTop: 5,
   },
 });
 export default styles;
