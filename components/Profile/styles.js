@@ -49,11 +49,7 @@ const styles = StyleSheet.create({
     height: 238,
     marginTop: 43,
   },
-  add: {
-    position: "absolute",
-    marginLeft: 178,
-    marginTop: 95,
-  },
+  
   info: {
     color: "#fff",
     alignSelf: "center",

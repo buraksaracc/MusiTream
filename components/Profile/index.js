@@ -31,13 +31,7 @@ export default function Profile() {
               style={styles.image}
             ></Image>
           </View>
-          <TouchableOpacity style={styles.add}>
-            <Ionicons
-              name="ios-add-circle"
-              size={35}
-              color="#35303D"
-            ></Ionicons>
-          </TouchableOpacity>
+         
           <View style={styles.info}>
             <Text style={styles.username}>Opia</Text>
             <Text style={styles.usertype}>Producer</Text>
