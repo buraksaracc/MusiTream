@@ -71,9 +71,23 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     marginTop: 10,
 
-    width: 200,
+    width: 280,
     height: 200,
     textAlignVertical: "top",
+  },
+  saveButton:{
+      height: 42,
+      justifyContent: "center",
+      alignItems: "center",
+      borderRadius: 12,
+      marginBottom:50,
+      backgroundColor:"rgba(195, 183, 255, 0.42)",
+    
+  },
+  saveText: {
+    fontSize: 16,
+    fontWeight: "500",
+    color: "#AEA3A3",
   },
 });
 export default styles;

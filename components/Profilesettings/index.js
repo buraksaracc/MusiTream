@@ -10,6 +10,17 @@ import {
 } from "react-native";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 
+
+
+
+//KAYDET BUTONU
+
+
+
+
+
+
+
 export default function Profilesettings() {
   return (
     <View style={styles.container}>
@@ -53,9 +64,12 @@ export default function Profilesettings() {
             placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a commodo odio. Vestibulum condimentum at arcu non cursus. 
                 "
             placeholderTextColor="#656565"
-            numberOfLines={3}
+            numberOfLines={5}
           ></TextInput>
-        </View>
+        
+        <TouchableOpacity style={styles.saveButton}>
+          <Text style={styles.saveText}>SAVE</Text>
+        </TouchableOpacity></View>
       </View>
     </View>
   );
