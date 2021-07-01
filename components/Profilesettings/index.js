@@ -10,17 +10,6 @@ import {
 } from "react-native";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 
-
-
-
-//KAYDET BUTONU
-
-
-
-
-
-
-
 export default function Profilesettings() {
   return (
     <View style={styles.container}>
