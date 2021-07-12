@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(195, 183, 255, 0.42)",
     width: 315,
     height: 238,
-    marginTop: 43,
+    marginTop:5
   },
   
   info: {

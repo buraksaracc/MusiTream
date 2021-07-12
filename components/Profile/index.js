@@ -24,6 +24,23 @@ export default function Profile() {
             Profile
           </Text>
         </View>
+        <TouchableOpacity
+          style={{
+            height: 30,
+            justifyContent: "center",
+            alignSelf: "center",
+            alignItems: "center",
+            textAlign: "center",
+            borderRadius: 12,
+            marginTop: 30,
+            backgroundColor: "#7B61FF",
+            width: 120,
+          }}
+        >
+          <Text style={{ fontSize: 13, fontWeight: "400", color: "#CBCBCB" }}>
+            FOLLOWING
+          </Text>
+        </TouchableOpacity>
         <View style={styles.profileBorder}>
           <View style={styles.profilePic}>
             <Image
@@ -31,7 +48,7 @@ export default function Profile() {
               style={styles.image}
             ></Image>
           </View>
-         
+
           <View style={styles.info}>
             <Text style={styles.username}>Opia</Text>
             <Text style={styles.usertype}>Producer</Text>
