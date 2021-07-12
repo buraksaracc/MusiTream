@@ -5,12 +5,8 @@ import { Ionicons } from "@expo/vector-icons";
 import Modal from "react-native-modal";
 
 export default function Addpost({ navigation }) {
-  // for pop up windows
-  const [isModalVisible, setModalVisible] = useState(false);
-
-  const toggleModal = () => {
-    setModalVisible(!isModalVisible);
-  };
+  // for pop up window
+ 
   const [isModalTwoVisible, setModalTwoVisible] = useState(false);
   const toggleModalTwo = () => {
     setModalTwoVisible(!isModalTwoVisible);
@@ -27,7 +23,7 @@ export default function Addpost({ navigation }) {
         </Text>
       </View>
       <View style={styles.margining}>
-        <TouchableOpacity style={styles.clickable} onPress={toggleModal}>
+        <TouchableOpacity style={styles.clickable}>
           <Ionicons
             style={{ position: "absolute", marginLeft: 8 }}
             name="images"
@@ -37,7 +33,7 @@ export default function Addpost({ navigation }) {
           <Text style={styles.settings}>From Gallery</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-          <TouchableOpacity style={styles.clickable} onPress={toggleModal}>
+          <TouchableOpacity style={styles.clickable}>
             <Ionicons
               style={{ position: "absolute", marginLeft: 8 }}
               name="camera"
@@ -47,35 +43,18 @@ export default function Addpost({ navigation }) {
             <Text style={styles.settings}>From Camera</Text>
           </TouchableOpacity>
         </TouchableOpacity>
-        <Modal isVisible={isModalVisible}>
-          <TouchableOpacity onPress={toggleModal}>
-            <Ionicons
-              style={styles.closeButton}
-              name="close-circle-outline"
-              size={30}
-            ></Ionicons>
-          </TouchableOpacity>
-
-          <View style={styles.addPost}>
-            <Text style={styles.addPostText}>About:</Text>
-            <TextInput
-              style={styles.inputs}
-              placeholder="Write something about your post!"
-              placeholderTextColor="#656565"
-            />
-            <Text style={styles.addPostText}>Media:</Text>
-            <TouchableOpacity>
-              <Image
-                source={require("../../assets/random1.jpg")}
-                style={styles.image}
-              />
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.postButton}>
-              <Text style={styles.postText}>POST</Text>
-            </TouchableOpacity>
-          </View>
-        </Modal>
+      
+        <TouchableOpacity>
+             <TouchableOpacity style={styles.clickable}>
+          <Ionicons
+            style={{ position: "absolute", marginLeft: 8 }}
+            name="musical-notes"
+            size={25}
+            color="#CBCBCB"
+          ></Ionicons>
+          <Text style={styles.settings}>Upload Audio</Text>
+        </TouchableOpacity>
+        </TouchableOpacity>
         <TouchableOpacity>
              <TouchableOpacity style={styles.clickable} onPress={toggleModalTwo}>
           <Ionicons
