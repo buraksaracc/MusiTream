@@ -1,10 +1,20 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 import { Text, View, TouchableOpacity, TextInput, Image } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function FromGallery() {
   return (
     <View style={styles.containerForLanding}>
+     <TouchableOpacity style={styles.arrowBack}>
+        <Ionicons name="chevron-back-outline" color="#CBCBCB" size={40} />
+      </TouchableOpacity>
+
+      <View style={styles.pageTitle}>
+        <Text style={{ color: "#CBCBCB", fontSize: 25, fontWeight: "600" }}>
+          Add Post
+        </Text>
+      </View>
       <View style={styles.addPost}>
         <Text style={styles.addPostText}>About:</Text>
         <TextInput
@@ -39,6 +49,19 @@ const styles = StyleSheet.create({
     height: "100%",
     backgroundColor: "#000",
   },
+  arrowBack: {
+    justifyContent: "flex-start",
+    marginTop: 60,
+    marginHorizontal: 16,
+  },
+
+  pageTitle: {
+    position: "absolute",
+    justifyContent: "flex-start",
+    marginHorizontal: 16,
+    marginTop: 63,
+    marginStart: 60,
+  },
   inputs: {
     fontSize: 12,
     fontWeight: "500",
@@ -53,7 +76,7 @@ const styles = StyleSheet.create({
   },
   addPost: {
     alignSelf: "center",
-    marginTop: 200,
+    marginTop: 100,
     width: 350,
     height: 300,
   },
