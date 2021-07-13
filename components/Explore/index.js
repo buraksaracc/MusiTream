@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Text,
   View,
@@ -6,15 +6,12 @@ import {
   ScrollView,
   TouchableOpacity,
   StyleSheet,
+  TextInput,
 } from "react-native";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 
-export default function Profile() {
-  const [isModalVisible, setModalVisible] = useState(false);
+export default function Explore() {
 
-  const toggleModal = () => {
-    setModalVisible(!isModalVisible);
-  };
   return (
     <ScrollView style={styles.container}>
       <ScrollView vertical={true} showsVerticalScrollIndicator={false}>
@@ -27,7 +24,14 @@ export default function Profile() {
             Explore
           </Text>
         </View>
-
+        <View style={styles.search}>
+        <TextInput
+          style={{ padding: 8, fontSize: 12, fontWeight: "500" }}
+          placeholder="Search..."
+          placeholderTextColor="#656565"
+        />
+        <Ionicons style={{position:"absolute",marginLeft:75, marginTop:5}} name="search" color="#CBCBCB" size={15}/>
+        </View>
         <View style={styles.exploreBorder}>
           <TouchableOpacity style={styles.profilePic}>
             <Image
@@ -82,11 +86,16 @@ const styles = StyleSheet.create({
     marginTop: 60,
     marginHorizontal: 16,
   },
-  more: {
-    position: "absolute",
-    marginTop: 60,
-    marginStart: 330,
-    marginHorizontal: 16,
+  search: {
+    marginLeft:260,
+    position:"absolute",
+    marginTop:70,
+    width: 100,
+    height: 30,
+    borderColor: "#CBCBCB",
+    borderWidth: 0.3,
+    borderRadius: 12,
+    
   },
   pageTitle: {
     position: "absolute",
@@ -107,7 +116,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     borderRadius: 30,
     backgroundColor: "rgba(195, 183, 255, 0.42)",
-    width: 315,
+    width: 340,
     marginTop: 20,
     
   },
@@ -120,7 +129,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     borderRadius: 30,
     backgroundColor: "#35303D",
-    width: 315,
+    width: 340,
     height: 300,
     marginTop: 10,
   },
