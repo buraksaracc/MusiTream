@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderColor: "#383838",
     marginLeft: 35,
-    marginTop: 30,
+    marginTop: 35,
     width: 100,
     height: 140,
     borderRadius: 12,
