@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   TextInput,
 } from "react-native";
-import styles from "./styles";
+import styles from "./styles.js";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 
 export default function StreamPodcast() {
@@ -45,6 +45,23 @@ export default function StreamPodcast() {
               placeholderTextColor="#656565"
             ></TextInput>
           </View>
+          <TouchableOpacity
+          style={{
+            height: 30,
+            justifyContent: "center",
+            alignSelf: "center",
+            alignItems: "center",
+            textAlign: "center",
+            borderRadius: 12,
+            marginTop: 30,
+            backgroundColor: "#7B61FF",
+            width: 200,
+          }}
+        >
+          <Text style={{ fontSize: 13, fontWeight: "400", color: "#CBCBCB" }}>
+            LIVE CHAT
+          </Text>
+        </TouchableOpacity>
           <Text
             style={{
               color: "#CBCBCB",
@@ -57,7 +74,7 @@ export default function StreamPodcast() {
           >
             Current Streamers
           </Text>
-
+          
           <ScrollView vertical={true} showsVerticalScrollIndicator={true}>
             <View style={styles.containerStream}>
               <View style={styles.profileBorder}>
