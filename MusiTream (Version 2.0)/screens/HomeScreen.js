@@ -35,6 +35,7 @@ const wait = (timeout) => {
 function Home({ navigation }) {
   const [followings, setFollowings] = useState([]);
   const [refreshing, setRefreshing] = useState(false);
+  const [check, setCheck] = useState(null);
 
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
@@ -143,78 +144,81 @@ function Home({ navigation }) {
       .doc(firebase.auth().currentUser.uid)
       .delete();
   };
-  const Item = ({ item, onPress, textColor }) => (
-    <View>
-      <View style={styles.profileBorder}>
-        <View style={styles.profilePic}>
-          <Image
-            style={{ flex: 1, aspectRatio: 1 / 1 }}
-            source={{ uri: item.profilePic }}
-          />
-        </View>
+  const Item = ({ item, onPress, textColor }) => {
+    return (
+      <View>
+        <View style={styles.profileBorder}>
+          <View style={styles.profilePic}>
+            <Image
+              style={{ flex: 1, aspectRatio: 1 / 1 }}
+              source={{ uri: item.profilePic }}
+            />
+          </View>
 
-        <View style={styles.info}>
-          <Text style={styles.username}>{item.userName}</Text>
-          <Text style={styles.usertype}>{item.userType}</Text>
-        </View>
-        <View style={styles.aboutPost}>
-          <Text
-            style={{
-              color: "#CBCBCB",
-              fontSize: 13,
-              padding: 10,
-              marginLeft: 30,
-              width: 330,
-            }}
-          >
-            {item.description}
-          </Text>
-        </View>
-
-        <View style={styles.postPic}>
-          <Image
-            source={{ uri: item.postData.downloadURL }}
-            style={styles.image1}
-          ></Image>
-        </View>
-
-        <View style={styles.buttonsContainer}>
-          <TouchableOpacity style={styles.comment}>
-            <FontAwesome
-              name="comment"
-              style={{ fontSize: 30, color: "white" }}
-              onPress={() => {
-                navigation.navigate("Comments", {
-                  postID: item.postId,
-                  userID: item.userId,
-                  userName: item.userName,
-                });
+          <View style={styles.info}>
+            <Text style={styles.username}>{item.userName}</Text>
+            <Text style={styles.usertype}>{item.userType}</Text>
+          </View>
+          <View style={styles.aboutPost}>
+            <Text
+              style={{
+                color: "#CBCBCB",
+                fontSize: 13,
+                padding: 10,
+                marginLeft: 30,
+                width: 330,
               }}
-            />
-          </TouchableOpacity>
+            >
+              {item.postData.description}
+            </Text>
+          </View>
 
-          <TouchableOpacity style={styles.like}>
-            <FontAwesome
-              name="heart"
-              style={[{ fontSize: 30 }, textColor]}
-              onPress={onPress}
-            />
-          </TouchableOpacity>
+          <View style={styles.postPic}>
+            <Image
+              source={{ uri: item.postData.downloadURL }}
+              style={styles.image1}
+            ></Image>
+          </View>
+
+          <View style={styles.buttonsContainer}>
+            <TouchableOpacity style={styles.comment}>
+              <FontAwesome
+                name="comment"
+                style={{ fontSize: 30, color: "white" }}
+                onPress={() => {
+                  navigation.navigate("Comments", {
+                    postID: item.postId,
+                    userID: item.userId,
+                    userName: item.userName,
+                  });
+                }}
+              />
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.like}>
+              <FontAwesome
+                name="heart"
+                style={[{ fontSize: 30 }, textColor]}
+                onPress={onPress}
+              />
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
-    </View>
-  );
+    );
+  };
   const [selectedId, setSelectedId] = useState(null);
-  const [check, setCheck] = useState(null);
 
   const renderItem = ({ item }) => {
     let color = "";
 
     if (item.postId === selectedId && check == "red") {
       onPressUnlike(item.userId, item.postId);
+      item.liked = false;
       color = "black";
     } else if (item.postId === selectedId && check == "black") {
       onPressLike(item.userId, item.postId);
+      item.liked = true;
       color = "red";
     } else {
       color = item.liked ? "red" : "black";
