@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-export function LiveStream() {
+export function LiveStream({ navigation }) {
   return (
     <ScrollView style={styles.container}>
       <ScrollView vertical={true} showsVerticalScrollIndicator={false}>
@@ -47,6 +47,24 @@ export function LiveStream() {
               placeholderTextColor="#656565"
             ></TextInput>
           </View>
+          <TouchableOpacity
+            style={{
+              height: 30,
+              justifyContent: "center",
+              alignSelf: "center",
+              alignItems: "center",
+              textAlign: "center",
+              borderRadius: 12,
+              marginTop: 30,
+              backgroundColor: "#7B61FF",
+              width: 200,
+            }}
+            onPress={() => navigation.navigate("Chats")}
+          >
+            <Text style={{ fontSize: 13, fontWeight: "400", color: "#CBCBCB" }}>
+              LIVE CHAT
+            </Text>
+          </TouchableOpacity>
           <Text
             style={{
               color: "#CBCBCB",
